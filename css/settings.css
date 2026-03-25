@@ -1,0 +1,8 @@
+/* ============================================================
+   PAGE: SETTINGS (pages/settings.html)
+   Page-specific styles only.
+   (Intentionally minimal — all UI uses shared components.)
+   ============================================================ */
+
+/* Keep file non-empty without changing design */
+.page#page-settings { }
