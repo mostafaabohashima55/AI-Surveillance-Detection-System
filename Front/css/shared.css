@@ -851,3 +851,119 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-muted) !important;
 }
 
+
+/* ============================================================
+   Responsive Fixes
+   ============================================================ */
+
+/* --- Tablet & Mobile Overrides (<= 991px) --- */
+@media (max-width: 991px) {
+  /* Fix horizontal overflow globally without breaking Bootstrap grids */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* NOTE: Sidebar collapse is already handled seamlessly by JavaScript and 
+     existing CSS on max-width: 767px. We avoid modifying sidebar widths here 
+     to preserve the existing JS toggle state behavior and RTL sliding logic. */
+}
+
+/* --- Mobile Specific Fixes (<= 576px) --- */
+@media (max-width: 576px) {
+  /* Adjust page container padding */
+  .page-content {
+    padding: 16px 12px 24px;
+  }
+
+  /* Compact topbar and typography */
+  .topbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .topbar-title {
+    font-size: 1rem;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Page headers stack vertically */
+  .page-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+  .page-header button,
+  .page-header .btn-primary-custom {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Increase touch target sizes for usability (Min 44px) */
+  .topbar-btn, 
+  .btn-icon, 
+  .sidebar-toggle,
+  .btn-primary-custom, 
+  .btn-outline-custom {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar-btn, .btn-icon {
+    width: 44px;
+  }
+
+  /* Prevent input auto-zoom on iOS & ensure tap targets */
+  .form-control, 
+  .form-select {
+    min-height: 44px;
+    font-size: 16px !important; 
+  }
+
+  /* Responsive cards */
+  .card-header {
+    flex-wrap: wrap;
+    padding: 14px 16px !important;
+  }
+  
+  /* Stack card header actions safely without breaking RTL layout.
+     Using a combined margin overrides .ms-auto and .me-auto in both LTR/RTL */
+  .card-header > .btn-outline-custom,
+  .card-header > .ms-auto,
+  .card-header > .me-auto {
+    width: 100%;
+    justify-content: center;
+    margin: 12px 0 0 0 !important; 
+  }
+  
+  .card-body {
+    padding: 16px !important;
+  }
+
+  /* Ensure tables scroll smoothly inside cards */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: none;
+  }
+  .table th, .table td {
+    padding: 10px 12px !important;
+  }
+  
+  /* Fit Modals properly on small screens */
+  .modal-dialog {
+    margin: 12px;
+  }
+  .modal-header, 
+  .modal-body, 
+  .modal-footer {
+    padding: 16px !important;
+  }
+}

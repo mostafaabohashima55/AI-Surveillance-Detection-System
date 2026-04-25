@@ -1006,6 +1006,31 @@ a { text-decoration: none; color: inherit; }
 [dir="rtl"] .main-content.expanded { margin-right: 72px; }
 [dir="rtl"] .nav-link.active::before { left: unset; right: 0; border-radius: 3px 0 0 3px; }
 
+/* ===== RTL FIX FOR AUTH ===== */
+[dir="rtl"] .auth-card {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .auth-input {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-input::placeholder {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-label,
+[dir="rtl"] .auth-title,
+[dir="rtl"] .auth-subtitle {
+  text-align: right;
+}
+
+[dir="rtl"] .input-group {
+  flex-direction: row-reverse;
+}
+
+
 @media (max-width: 767px) {
   [dir="rtl"] .sidebar { transform: translateX(100%); right: 0; }
   [dir="rtl"] .sidebar.mobile-open { transform: translateX(0); }
