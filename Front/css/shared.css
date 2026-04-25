@@ -752,7 +752,7 @@ a { text-decoration: none; color: inherit; }
   z-index: 999;
   backdrop-filter: blur(2px);
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .sidebar { transform: translateX(-100%); }
   .sidebar.mobile-open { transform: translateX(0); }
   .sidebar-overlay.show { display: block; }
@@ -826,7 +826,7 @@ a { text-decoration: none; color: inherit; }
 [dir="rtl"] .topbar-search i { left: unset; right: 12px; }
 [dir="rtl"] .topbar-search input { padding: 7px 36px 7px 16px; }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   [dir="rtl"] .sidebar { transform: translateX(100%); right: 0; }
   [dir="rtl"] .sidebar.mobile-open { transform: translateX(0); }
   [dir="rtl"] .main-content { margin-right: 0 !important; margin-left: 0 !important; }
@@ -853,20 +853,16 @@ a { text-decoration: none; color: inherit; }
 
 
 /* ============================================================
-   Responsive Fixes
+   Responsive Fixes Final
    ============================================================ */
 
 /* --- Tablet & Mobile Overrides (<= 991px) --- */
 @media (max-width: 991px) {
-  /* Fix horizontal overflow globally without breaking Bootstrap grids */
+  /* Fix horizontal overflow globally */
   html, body {
     max-width: 100vw;
     overflow-x: hidden;
   }
-  
-  /* NOTE: Sidebar collapse is already handled seamlessly by JavaScript and 
-     existing CSS on max-width: 767px. We avoid modifying sidebar widths here 
-     to preserve the existing JS toggle state behavior and RTL sliding logic. */
 }
 
 /* --- Mobile Specific Fixes (<= 576px) --- */

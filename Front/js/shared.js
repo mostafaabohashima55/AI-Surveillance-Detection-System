@@ -554,7 +554,7 @@ function bindSidebarToggle() {
 
   if (btn) {
     btn.addEventListener('click', () => {
-      if (window.innerWidth <= 767) {
+      if (window.innerWidth <= 991) {
         document.getElementById('sidebar').classList.toggle('mobile-open');
         overlay?.classList.toggle('show');
       } else {
